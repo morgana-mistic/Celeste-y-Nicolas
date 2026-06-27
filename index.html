@@ -5,39 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitación</title>
 
-<style>
-html {
-  scroll-behavior: smooth;
-}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
+<style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0e0e0e;
-  color: #fff;
+  background: #f6f3ef;
+  color: #2b2b2b;
+  font-family: "Montserrat", sans-serif;
 }
 
-/* ANIMACIÓN SUAVE */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* HERO CINEMÁTICO */
+/* HERO LIMPIO */
 .hero {
   height: 100vh;
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero img {
@@ -45,95 +31,88 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.65) contrast(1.05);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+  filter: brightness(0.75);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  color: #fff;
 }
 
-.hero h1 {
-  font-size: 2.4rem;
-  letter-spacing: 2px;
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
-.hero p {
-  opacity: 0.8;
+.subtitle {
+  margin-top: 10px;
+  font-weight: 300;
 }
 
 /* SECCIONES */
 section {
-  padding: 80px 20px;
-  text-align: center;
+  padding: 70px 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
-/* CONTADOR */
+/* TITULOS */
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* COUNTDOWN */
 #countdown {
   font-size: 2rem;
-  letter-spacing: 3px;
-}
-
-/* TARJETAS */
-.card {
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 12px;
-  margin: 15px auto;
-  max-width: 500px;
-  backdrop-filter: blur(8px);
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 /* BOTONES */
 a.button {
   display: inline-block;
-  margin-top: 10px;
   padding: 12px 18px;
-  background: #fff;
-  color: #000;
+  background: #2b2b2b;
+  color: #fff;
   text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
-/* MAPA */
-iframe {
-  width: 100%;
-  height: 250px;
+/* CARDS LIMPIOS */
+.card {
+  background: #fff;
+  padding: 18px;
   border-radius: 12px;
-  border: none;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+}
+
+/* LINKS MAPA (NO EMBEBIDO, COMO PEDISTE) */
+.map-link {
+  display: block;
+  margin-top: 8px;
+  color: #2b2b2b;
+  text-decoration: underline;
+  font-size: 0.95rem;
 }
 
 /* RSVP */
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-}
-
-.rsvp-box {
-  max-width: 500px;
-  margin: auto;
-  background: rgba(255,255,255,0.06);
-  padding: 20px;
-  border-radius: 12px;
-}
-
-footer {
-  padding: 40px;
+.rsvp {
   text-align: center;
-  opacity: 0.6;
-  font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 </style>
 </head>
@@ -142,72 +121,76 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-  <img src="foto de portada.png" alt="portada">
-  <div class="hero-content fade">
+  <img src="foto de portada.jpg" alt="portada">
+  <div class="hero-content">
     <h1>Celeste & Nicolás</h1>
-    <p>Una historia que se convierte en ceremonia</p>
+    <div class="subtitle">20 de Octubre 2026 · Una celebración compartida</div>
   </div>
 </div>
 
-<!-- CONTADOR -->
-<section class="fade">
-  <h2>Falta para el gran día</h2>
+<!-- COUNTDOWN -->
+<section>
+  <h2>Cuenta regresiva</h2>
   <div id="countdown"></div>
 </section>
 
-<!-- INVOCACIÓN / ALIAS -->
-<section class="fade">
-  <h2>Nombre del vínculo</h2>
-  <div class="card">
-    Celeste & Nicolás
-  </div>
-</section>
-
-<!-- LUGARES -->
-<section class="fade">
-  <h2>Los lugares del ritual</h2>
+<!-- UBICACIONES -->
+<section>
+  <h2>Ubicaciones</h2>
 
   <div class="card">
-    <h3>Zambra Eventos</h3>
-    <iframe src="https://maps.google.com/maps?q=Zambra%20Eventos&output=embed"></iframe>
+    <strong>Zambra Eventos</strong>
+    <a class="map-link" href="https://maps.app.goo.gl/ruWspqssnGifCesdA" target="_blank">
+      Ver en Google Maps
+    </a>
   </div>
 
   <div class="card">
-    <h3>Registro Civil</h3>
-    <iframe src="https://maps.google.com/maps?q=Registro%20Civil&output=embed"></iframe>
+    <strong>Registro Civil</strong>
+    <a class="map-link" href="https://maps.app.goo.gl/uhRMzqwi8k8wRm2X7" target="_blank">
+      Ver en Google Maps
+    </a>
   </div>
 
   <div class="card">
-    <h3>Ceremonia Religiosa</h3>
-    <iframe src="https://maps.google.com/maps?q=Ceremonia%20religiosa&output=embed"></iframe>
-  </div>
-</section>
-
-<!-- RSVP -->
-<section class="fade">
-  <h2>Confirmar asistencia</h2>
-
-  <div class="rsvp-box">
-    <input type="text" placeholder="Nombre">
-    <textarea placeholder="Mensaje o confirmación"></textarea>
-
-    <a class="button"
-       href="https://wa.me/5493854118422?text=Hola%20quiero%20confirmar%20mi%20asistencia%20a%20la%20boda"
-       target="_blank">
-      Confirmar por WhatsApp
+    <strong>Ceremonia Religiosa</strong>
+    <a class="map-link" href="https://maps.app.goo.gl/yQ5vaNGtDU3w4tVFA" target="_blank">
+      Ver en Google Maps
     </a>
   </div>
 </section>
 
-<!-- CRÉDITO -->
-<footer class="fade">
-  <a href="https://wa.me/5493854118422">
-    Invitación digital creada con amor por Morgana Tecno
+<!-- RSVP -->
+<section class="rsvp">
+  <h2>Confirmar asistencia</h2>
+
+  <a class="button"
+     href="https://wa.me/5493854118422?text=Hola%20quiero%20confirmar%20mi%20asistencia%20a%20la%20boda"
+     target="_blank">
+    Confirmar por WhatsApp
+  </a>
+</section>
+
+<!-- VESTIMENTA -->
+<section>
+  <h2>Código de vestimenta</h2>
+  <div class="card">
+    Elegante formal · Colores suaves recomendados · Evitar blanco
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Invitación digital creada con amor por Morgana Tecno
+  <br>
+  <a href="https://wa.me/5493854118422" target="_blank">
+    Contacto
   </a>
 </footer>
 
+<!-- COUNTDOWN SCRIPT -->
 <script>
-/* COUNTDOWN */
+/* ⛔ AQUÍ SE PONE LA FECHA REAL */
 const eventDate = new Date("2026-10-20T18:00:00").getTime();
 
 setInterval(() => {
@@ -220,27 +203,12 @@ setInterval(() => {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("countdown").innerHTML =
-    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    `${days} días · ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
-
-/* ANIMACIONES AL SCROLL */
-const elements = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.2 });
-
-elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
-
-
 
 
 
