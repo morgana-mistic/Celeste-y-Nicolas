@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celeste & Nicolás | Nos Casamos</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --rosa:#f8f2ef;
+    --rosa2:#fffaf8;
+    --dorado:#c9a86a;
+    --texto:#5b4a42;
+    --blanco:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cormorant Garamond',serif;
+    background:linear-gradient(var(--rosa),var(--rosa2));
+    color:var(--texto);
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+section{
+    padding:70px 25px;
+}
+
+h2{
+    text-align:center;
+    color:var(--dorado);
+    font-size:2.4rem;
+    margin-bottom:35px;
+}
+
+.decoracion{
+    text-align:center;
+    font-size:2rem;
+    color:var(--dorado);
+    margin-bottom:10px;
+}
+
+/* PORTADA */
+
+.hero{
+    height:100vh;
+    background:url('foto%20de%20portada.png') center center/cover no-repeat;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+}
+
+.hero-contenido{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    color:white;
+    text-align:center;
+    padding:40px;
+    z-index:2;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:4rem;
+    font-weight:normal;
+}
+
+.hero h3{
+    font-size:1.5rem;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.fecha{
+    font-size:1.5rem;
+    margin-top:15px;
+}
+
+/* MENSAJE */
+
+.mensaje{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    font-size:1.5rem;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.caja{
+    width:110px;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.numero{
+    font-size:2.3rem;
+    color:var(--dorado);
+    font-weight:bold;
+}
+
+.etiqueta{
+    font-size:1rem;
+}
+
+/* ITINERARIO */
+
+.evento{
+    background:white;
+    max-width:700px;
+    margin:25px auto;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.evento h3{
+    color:var(--dorado);
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.hora{
+    font-size:1.6rem;
+    font-weight:bold;
+}
+
+.boton{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    background:var(--dorado);
+    color:white;
+    font-size:1.1rem;
+}
+
+.boton:hover{
+    opacity:.85;
+}
+
+/* RSVP */
+
+.rsvp{
+    text-align:center;
+}
+
+.rsvp p{
+    font-size:1.4rem;
+    margin-bottom:25px;
+}
+
+/* DRESS CODE */
+
+.dress{
+    text-align:center;
+    font-size:1.5rem;
+}
+
+/* REGALOS */
+
+.regalos{
+    text-align:center;
+    font-size:1.4rem;
+}
+
+.alias{
+    margin-top:20px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    display:inline-block;
+    font-size:1.6rem;
+    color:var(--dorado);
+}
+
+/* GALERIA */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+}
+
+.galeria img{
+    width:100%;
+    border-radius:20px;
+}
+
+/* FINAL */
+
+.final{
+    text-align:center;
+    font-size:1.5rem;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#9e8b7c;
+    font-size:1rem;
+}
+
+/* MUSICA */
+
+#musicaBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:var(--dorado);
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+    z-index:999;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<section class="hero">
+
+<div class="hero-contenido">
+
+<h3>¡NOS CASAMOS!</h3>
+
+<h1>Celeste & Nicolás</h1>
+
+<p>
+Después de tantos sueños compartidos,<br>
+llegó el momento de decir Sí.
+</p>
+
+<div class="fecha">
+15 de Noviembre de 2026
+</div>
+
+</div>
+</section>
+
+<!-- MENSAJE -->
+
+<section>
+
+<div class="decoracion">❦</div>
+
+<h2>Bienvenidos</h2>
+
+<div class="mensaje">
+
+Con inmensa alegría queremos compartir con ustedes uno de los días más importantes de nuestras vidas.
+
+Nos encantaría contar con su presencia para celebrar juntos este nuevo comienzo.
+
+</div>
+
+</section>
+
+<!-- CUENTA REGRESIVA -->
+
+<section>
+
+<div class="decoracion">♥</div>
+
+<h2>Faltan</h2>
+
+<div class="countdown">
+
+<div class="caja">
+<div id="dias" class="numero">0</div>
+<div class="etiqueta">Días</div>
+</div>
+
+<div class="caja">
+<div id="horas" class="numero">0</div>
+<div class="etiqueta">Horas</div>
+</div>
+
+<div class="caja">
+<div id="minutos" class="numero">0</div>
+<div class="etiqueta">Minutos</div>
+</div>
+
+<div class="caja">
+<div id="segundos" class="numero">0</div>
+<div class="etiqueta">Segundos</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ITINERARIO -->
+
+<section>
+
+<div class="decoracion">✦</div>
+
+<h2>Nuestro Gran Día</h2>
+
+<div class="evento">
+<h3>🏛️ Ceremonia Civil</h3>
+<div class="hora">10:30 hs</div>
+<p>Registro Civil N°1</p>
+<a class="boton" href="#">Ver ubicación</a>
+</div>
+
+<div class="evento">
+<h3>⛪ Ceremonia Religiosa</h3>
+<div class="hora">20:00 hs</div>
+<p>Parroquia San Francisco</p>
+<a class="boton" href="#">Ver ubicación</a>
+</div>
+
+<div class="evento">
+<h3>🎉 Fiesta</h3>
+<div class="hora">21:30 hs</div>
+<p>Salón Los Cedros</p>
+<a class="boton" href="#">Ver ubicación</a>
+</div>
+
+</section>
+
+<!-- RSVP -->
+
+<section class="rsvp">
+
+<div class="decoracion">❦</div>
+
+<h2>¿Nos acompañás?</h2>
+
+<p>
+Agradeceremos confirmar asistencia antes del 20 de octubre.
+</p>
+
+<a class="boton"
+href="https://wa.me/5490000000000?text=Hola%20Celeste%20y%20Nicol%C3%A1s.%20Confirmo%20mi%20asistencia%20a%20la%20boda.">
+
+Confirmar asistencia
+
+</a>
+
+</section>
+
+<!-- DRESS -->
+
+<section class="dress">
+
+<div class="decoracion">♥</div>
+
+<h2>Código de Vestimenta</h2>
+
+👗 Elegante Sport
+
+<br><br>
+
+Fiesta al aire libre.<br>
+Recomendamos calzado cómodo.
+
+</section>
+
+<!-- REGALOS -->
+
+<section class="regalos">
+
+<div class="decoracion">✦</div>
+
+<h2>Mesa de Regalos</h2>
+
+Nuestro mejor regalo es tu presencia.<br>
+Pero si deseas hacernos un obsequio:
+
+<br><br>
+
+<div class="alias">
+CELESTEYNICO.BODA
+</div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section>
+
+<div class="decoracion">❦</div>
+
+<h2>Nuestros Momentos</h2>
+
+<div class="galeria">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div class="decoracion">♥</div>
+
+<h2>Gracias</h2>
+
+Gracias por acompañarnos en este momento tan especial.
+
+<br><br>
+
+¡Los esperamos para compartir juntos una noche inolvidable!
+
+<br><br>
+
+<strong>Celeste & Nicolás</strong>
+
+</section>
+
+<footer>
+
+Invitación digital creada con amor ♥
+
+</footer>
+
+<button id="musicaBtn">🔊</button>
+
+<audio id="musica" loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// Música
+
+const musica = document.getElementById("musica");
+const boton = document.getElementById("musicaBtn");
+
+boton.addEventListener("click",()=>{
+if(musica.paused){
+musica.play();
+boton.innerHTML="🔇";
+}else{
+musica.pause();
+boton.innerHTML="🔊";
+}
+});
+
+// Cuenta regresiva
+
+const fechaBoda = new Date("Nov 15, 2026 20:00:00").getTime();
+
+setInterval(function(){
+
+const ahora = new Date().getTime();
+
+const distancia = fechaBoda - ahora;
+
+document.getElementById("dias").innerHTML =
+Math.floor(distancia/(1000*60*60*24));
+
+document.getElementById("horas").innerHTML =
+Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutos").innerHTML =
+Math.floor((distancia%(1000*60*60))/(1000*60));
+
+document.getElementById("segundos").innerHTML =
+Math.floor((distancia%(1000*60))/1000);
+
+},1000);
+
+</script>
+
+</body>
+</html>
